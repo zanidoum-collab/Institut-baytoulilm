@@ -92,14 +92,12 @@ footer{background:linear-gradient(135deg,var(--noir2),#0a0a0a);padding:32px 24px
   .wrap{padding:0 16px}.sec{padding:44px 0}
 }
 @media(max-width:600px){
-  .hdr-top{grid-template-columns:auto 1fr;gap:8px;padding:10px 12px;border-bottom:none}
+  .hdr-top{grid-template-columns:auto 1fr;gap:8px;padding:10px 12px;border-bottom:none;align-items:flex-start;position:relative}
   .logo-block{grid-column:1;width:auto}
-  .logo-icon{width:60px;height:auto}
+  .logo-icon{width:50px;height:auto}
   .logo-ar{display:none}
-  nav{grid-column:2;margin:0;padding:0;background:none;gap:4px;overflow-x:auto;overflow-y:hidden}
-  nav a{font-size:.58rem;padding:6px 8px;border-bottom:none;border-right:1px solid rgba(245,245,245,.1)}
-  nav a.active{color:var(--dore);border-right:none}
-  nav a:last-child{border-right:none}
+  nav{display:none !important}
+  #menu-hamburger{display:block !important}
   .h-title{font-size:clamp(1.8rem,5vw,3rem)}
   .h-ar{font-size:clamp(1.2rem,4vw,2.5rem)}
   .h-sub{font-size:.78rem;line-height:1.6}
@@ -144,13 +142,22 @@ footer{background:linear-gradient(135deg,var(--noir2),#0a0a0a);padding:32px 24px
         <polygon class="islamic-star" points="100,50 110,75 136,75 115,90 125,115 100,100 75,115 85,90 64,75 90,75" />
       </svg>
     </div>
-    <nav style="grid-column:3;margin:0;padding:0;background:none;gap:32px">
+    <nav style="grid-column:3;margin:0;padding:0;background:none;gap:32px;display:flex">
       <a onclick="goPage('home')" class="active" id="tab-home">Accueil</a>
       <a onclick="goPage('programme')" id="tab-programme">Programme</a>
       <a onclick="goPage('inscription')" id="tab-inscription">Inscription</a>
       <a onclick="goPage('dons')" id="tab-dons">Dons</a>
       <a onclick="goPage('contact')" id="tab-contact">Contact</a>
     </nav>
+    <button id="menu-hamburger" onclick="toggleMobileMenu()" style="display:none;background:none;border:none;font-size:1.5rem;color:var(--dore);cursor:pointer;padding:8px;line-height:1;">⋮</button>
+  </div>
+  <!-- MENU MOBILE DÉROULANT -->
+  <div id="mobile-menu" style="display:none;background:var(--noir2);border-top:1px solid rgba(198,163,90,.2);padding:12px 16px;flex-direction:column;gap:0;position:absolute;top:100%;right:0;width:100%;max-width:200px;z-index:100;box-shadow:0 4px 12px rgba(13,13,13,.3);">
+    <a onclick="goPageMobile('home')" style="color:rgba(245,245,245,.7);font-size:.85rem;font-weight:500;padding:12px 16px;border-bottom:1px solid rgba(198,163,90,.1);cursor:pointer;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='rgba(198,163,90,.1)'" onmouseout="this.style.background='transparent'">Accueil</a>
+    <a onclick="goPageMobile('programme')" style="color:rgba(245,245,245,.7);font-size:.85rem;font-weight:500;padding:12px 16px;border-bottom:1px solid rgba(198,163,90,.1);cursor:pointer;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='rgba(198,163,90,.1)'" onmouseout="this.style.background='transparent'">Programme</a>
+    <a onclick="goPageMobile('inscription')" style="color:rgba(245,245,245,.7);font-size:.85rem;font-weight:500;padding:12px 16px;border-bottom:1px solid rgba(198,163,90,.1);cursor:pointer;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='rgba(198,163,90,.1)'" onmouseout="this.style.background='transparent'">Inscription</a>
+    <a onclick="goPageMobile('dons')" style="color:rgba(245,245,245,.7);font-size:.85rem;font-weight:500;padding:12px 16px;border-bottom:1px solid rgba(198,163,90,.1);cursor:pointer;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='rgba(198,163,90,.1)'" onmouseout="this.style.background='transparent'">Dons</a>
+    <a onclick="goPageMobile('contact')" style="color:rgba(245,245,245,.7);font-size:.85rem;font-weight:500;padding:12px 16px;cursor:pointer;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='rgba(198,163,90,.1)'" onmouseout="this.style.background='transparent'">Contact</a>
   </div>
 </header>
 
@@ -191,31 +198,13 @@ footer{background:linear-gradient(135deg,var(--noir2),#0a0a0a);padding:32px 24px
     <h2 class="stitle">Classes & <em>Niveaux</em></h2>
     <p class="sdesc" style="margin-bottom:40px;">Quatre étapes progressives pour chaque enfant de 6 à 18 ans.</p>
     
-    <!-- SECTION DÉPARTEMENT CORAN -->
-    <div style="background:linear-gradient(135deg,rgba(198,163,90,.15),rgba(198,163,90,.08));border:2px solid var(--dore);border-radius:14px;padding:32px;margin-bottom:40px;">
-      <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--noir);margin-bottom:24px;letter-spacing:-.01em;text-align:center;"><strong style="color:var(--dore);">📖 Département Coran</strong></h3>
-      <p style="font-size:.95rem;color:var(--txm);line-height:1.8;margin-bottom:24px;text-align:center;">Le Coran est au cœur de notre enseignement. Découvrez les différentes étapes de l'apprentissage coranique, de l'initiation à la mémorisation complète.</p>
-      
-      <div style="background:rgba(255,255,255,.6);border-radius:10px;padding:20px;margin-bottom:16px;">
-        <h4 style="color:var(--dore);font-weight:700;margin-bottom:8px;">🟡 Étape 1 : Initiation aux lettres et sons du Coran</h4>
-        <p style="font-size:.9rem;color:var(--txm);line-height:1.7;">CP - CE1 · 6 à 8 ans · Découverte des lettres arabes, sons du Coran et bases en lecture coranique.</p>
+    <!-- DÉPARTEMENT DU CORAN - ACCORDÉON -->
+    <div style="margin-top:40px;border:1px solid rgba(198,163,90,.2);border-radius:12px;overflow:hidden;">
+      <div onclick="toggleAccordion('dept-coran')" style="background:linear-gradient(135deg,rgba(198,163,90,.12),rgba(198,163,90,.08));border-bottom:1px solid rgba(198,163,90,.2);padding:24px 32px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;transition:background .2s;">
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--noir);letter-spacing:-.01em;margin:0;"><strong style="color:var(--dore);">📖 Département du Coran</strong></h3>
+        <span id="icon-coran" style="font-size:1.5rem;color:var(--dore);transition:transform .2s;">▼</span>
       </div>
-      
-      <div style="background:rgba(255,255,255,.6);border-radius:10px;padding:20px;margin-bottom:16px;">
-        <h4 style="color:var(--dore);font-weight:700;margin-bottom:8px;">🟡 Étape 2 : Lecture fluide et Tajwid</h4>
-        <p style="font-size:.9rem;color:var(--txm);line-height:1.7;">CE2 - CM1 - CM2 - 6e - 5e · 9 à 11 ans · Maîtrise de la lecture fluide du Coran et apprentissage des règles du Tajwid (récitation correcte).</p>
-      </div>
-      
-      <div style="background:rgba(255,255,255,.6);border-radius:10px;padding:20px;margin-bottom:16px;">
-        <h4 style="color:var(--dore);font-weight:700;margin-bottom:8px;">🟡 Étape 3 : Préparation à la Mémorisation (Prépa-Hifz)</h4>
-        <p style="font-size:.9rem;color:var(--txm);line-height:1.7;">CM1 - CM2 - 6e - 5e · 9 à 11 ans · Consolidation de la lecture fluide, maîtrise avancée du Tajwid et préparation méthodologique à la mémorisation complète.</p>
-      </div>
-      
-      <div style="background:rgba(255,255,255,.6);border-radius:10px;padding:20px;">
-        <h4 style="color:var(--dore);font-weight:700;margin-bottom:8px;">🟡 Étape 4 : Mémorisation intégrale du Coran (Hifz)</h4>
-        <p style="font-size:.9rem;color:var(--txm);line-height:1.7;">4e - 3e - Lycée · 12 à 18 ans · Mémorisation complète du Saint Coran, perfectionnement du Tajwid et consolidation des connaissances religieuses.</p>
-      </div>
-    </div>
+      <div id="dept-coran" style="padding:32px;background:linear-gradient(135deg,rgba(198,163,90,.06),rgba(198,163,90,.02));display:none;">
     
     <div style="background:linear-gradient(135deg,rgba(198,163,90,.08),rgba(198,163,90,.04));border-left:4px solid var(--dore);border-radius:10px;padding:28px;margin-bottom:24px;">
       <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--noir);margin-bottom:8px;letter-spacing:-.01em;"><strong>Étape d'initiation</strong></h3>
@@ -244,6 +233,19 @@ footer{background:linear-gradient(135deg,var(--noir2),#0a0a0a);padding:32px 24px
       <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--noir);margin-bottom:8px;letter-spacing:-.01em;"><strong>Mémorisation complète</strong></h3>
       <p style="font-size:.9rem;color:var(--dore);font-weight:600;margin-bottom:12px;">4e - 3e - Lycée · 12 à 18 ans · 7 ans</p>
       <p style="font-size:.95rem;color:var(--txm);line-height:1.8;">Mémorisation intégrale du Coran (Hifz), Tajwid, Aqidah, Fiqh (Al-Mabadi' al-Fiqhiyah), Hadith (40 Hadiths de Nawawi).</p>
+    </div>
+    </div>
+    </div>
+
+    <!-- DÉPARTEMENT DE SCIENCE RELIGIEUSE - ACCORDÉON -->
+    <div style="margin-top:24px;border:1px solid rgba(198,163,90,.2);border-radius:12px;overflow:hidden;">
+      <div onclick="toggleAccordion('dept-science')" style="background:linear-gradient(135deg,rgba(198,163,90,.12),rgba(198,163,90,.08));border-bottom:1px solid rgba(198,163,90,.2);padding:24px 32px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;transition:background .2s;">
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--noir);letter-spacing:-.01em;margin:0;"><strong style="color:var(--dore);">🕌 Département de Science Religieuse</strong></h3>
+        <span id="icon-science" style="font-size:1.5rem;color:var(--dore);transition:transform .2s;">▼</span>
+      </div>
+      <div id="dept-science" style="padding:32px;background:linear-gradient(135deg,rgba(198,163,90,.06),rgba(198,163,90,.02));display:none;">
+        <p style="font-size:.95rem;color:var(--txm);line-height:1.8;">Contenu à venir</p>
+      </div>
     </div>
   </div>
 </div>
@@ -392,6 +394,32 @@ footer{background:linear-gradient(135deg,var(--noir2),#0a0a0a);padding:32px 24px
 </div>
 
 <script>
+function toggleMobileMenu(){
+  const menu = document.getElementById('mobile-menu');
+  if(menu.style.display === 'none' || menu.style.display === ''){
+    menu.style.display = 'flex';
+  } else {
+    menu.style.display = 'none';
+  }
+}
+
+function goPageMobile(id){
+  goPage(id);
+  document.getElementById('mobile-menu').style.display = 'none';
+}
+
+function toggleAccordion(id){
+  const elem = document.getElementById(id);
+  const icon = document.getElementById('icon-' + id.split('-')[1]);
+  if(elem.style.display === 'none'){
+    elem.style.display = 'block';
+    if(icon) icon.style.transform = 'rotate(180deg)';
+  } else {
+    elem.style.display = 'none';
+    if(icon) icon.style.transform = 'rotate(0deg)';
+  }
+}
+
 function goPage(id){
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
