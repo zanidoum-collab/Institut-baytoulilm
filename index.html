@@ -25,7 +25,7 @@ header{background:var(--noir);position:sticky;top:0;z-index:200;border-bottom:3p
 .logo-nom{font-size:1.1rem;font-weight:300;color:var(--blanc);letter-spacing:.15em;text-transform:uppercase;line-height:1.2}
 .logo-sub{font-size:.62rem;color:rgba(245,245,245,.5);letter-spacing:.12em;margin-top:2px;text-transform:uppercase}
 .logo-chiconi{font-size:.58rem;font-weight:600;letter-spacing:.16em;color:var(--dore);margin-top:2px}
-nav{display:flex;padding:0 20px;overflow-x:auto;background:var(--noir2)}
+nav{display:flex;padding:0 20px;overflow-x:auto;background:var(--noir2);gap:0}
 nav a{color:rgba(245,245,245,.5);font-size:.75rem;font-weight:500;padding:12px 16px;border-bottom:3px solid transparent;white-space:nowrap;cursor:pointer;transition:color .2s,border-color .2s;letter-spacing:.04em}
 nav a.active{color:var(--dore);border-bottom-color:var(--dore)}
 nav a:hover{color:var(--blanc)}
@@ -91,6 +91,36 @@ footer{background:linear-gradient(135deg,var(--noir2),#0a0a0a);padding:32px 24px
 @media(max-width:720px){
   .wrap{padding:0 16px}.sec{padding:44px 0}
 }
+@media(max-width:600px){
+  .hdr-top{grid-template-columns:auto 1fr;gap:8px;padding:10px 12px;border-bottom:none}
+  .logo-block{grid-column:1;width:auto}
+  .logo-icon{width:60px;height:auto}
+  .logo-ar{display:none}
+  nav{grid-column:2;margin:0;padding:0;background:none;gap:4px;overflow-x:auto;overflow-y:hidden}
+  nav a{font-size:.58rem;padding:6px 8px;border-bottom:none;border-right:1px solid rgba(245,245,245,.1)}
+  nav a.active{color:var(--dore);border-right:none}
+  nav a:last-child{border-right:none}
+  .h-title{font-size:clamp(1.8rem,5vw,3rem)}
+  .h-ar{font-size:clamp(1.2rem,4vw,2.5rem)}
+  .h-sub{font-size:.78rem;line-height:1.6}
+  .h-badge span{font-size:.65rem}
+  .h-eye{font-size:.58rem}
+  .stitle{font-size:clamp(1.5rem,3.5vw,2.2rem)}
+  .sdesc{font-size:.85rem}
+  .slbl{font-size:.55rem}
+  .hero::after{font-size:8rem}
+  .wrap{padding:0 14px}
+  .sec{padding:32px 0}
+  .form-block-hdr{padding:16px 20px;flex-direction:column;text-align:center}
+  .fbh-badge{margin-left:0}
+  .form-block-body{padding:16px}
+  .fg2{grid-template-columns:1fr}
+  .fi{flex-direction:column;gap:12px}
+  .flinks{gap:8px;flex-direction:column;align-items:flex-start}
+  .fbot{flex-direction:column;gap:8px}
+  .fbot p{font-size:.58rem}
+  .btn{padding:10px 20px;font-size:.75rem}
+}
 </style>
 </head>
 <body>
@@ -104,16 +134,13 @@ footer{background:linear-gradient(135deg,var(--noir2),#0a0a0a);padding:32px 24px
     </div>
     <div class="logo-ar" style="width:150px;height:150px;display:flex;align-items:center;justify-content:center;font-size:0;">
       <svg viewBox="0 0 200 200" width="150" height="150" xmlns="http://www.w3.org/2000/svg">
-        <!-- Croissant islamique -->
         <defs>
           <style>
             .islamic-symbol { fill: none; stroke: #00C8FF; stroke-width: 3; stroke-linecap: round; }
             .islamic-star { fill: #00C8FF; }
           </style>
         </defs>
-        <!-- Croissant -->
         <path class="islamic-symbol" d="M 60 100 Q 80 80 100 80 Q 120 80 140 100" />
-        <!-- Étoile -->
         <polygon class="islamic-star" points="100,50 110,75 136,75 115,90 125,115 100,100 75,115 85,90 64,75 90,75" />
       </svg>
     </div>
@@ -147,7 +174,6 @@ footer{background:linear-gradient(135deg,var(--noir2),#0a0a0a);padding:32px 24px
       <p class="sdesc">Baytoul Ilm est un institut de savoir fondé à Chiconi, dédié à l'éducation islamique des jeunes de 6 à 18 ans. Nous proposons un accompagnement complet dans l'apprentissage du Coran et des sciences religieuses. L'objectif est de former des jeunes équilibrés, citoyens responsables, capables de s'insérer dans la société et de contribuer positivement à leur communauté, tout en restant fermement attachés aux enseignements de l'Islam.</p>
     </div>
   </div>
-  <!-- SECTION S'INSCRIRE -->
   <div style="background:linear-gradient(135deg,var(--noir),#1a1a1a);padding:80px 0;border-top:1px solid rgba(198,163,90,.2);border-bottom:1px solid rgba(198,163,90,.2);margin-top:40px;">
     <div class="wrap" style="text-align:center;">
       <div class="slbl" style="justify-content:center;color:var(--dore2);">Rejoignez-nous dès maintenant</div>
@@ -165,21 +191,44 @@ footer{background:linear-gradient(135deg,var(--noir2),#0a0a0a);padding:32px 24px
     <h2 class="stitle">Classes & <em>Niveaux</em></h2>
     <p class="sdesc" style="margin-bottom:40px;">Quatre étapes progressives pour chaque enfant de 6 à 18 ans.</p>
     
-    <!-- ÉTAPE INITIATION -->
+    <!-- SECTION DÉPARTEMENT CORAN -->
+    <div style="background:linear-gradient(135deg,rgba(198,163,90,.15),rgba(198,163,90,.08));border:2px solid var(--dore);border-radius:14px;padding:32px;margin-bottom:40px;">
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--noir);margin-bottom:24px;letter-spacing:-.01em;text-align:center;"><strong style="color:var(--dore);">📖 Département Coran</strong></h3>
+      <p style="font-size:.95rem;color:var(--txm);line-height:1.8;margin-bottom:24px;text-align:center;">Le Coran est au cœur de notre enseignement. Découvrez les différentes étapes de l'apprentissage coranique, de l'initiation à la mémorisation complète.</p>
+      
+      <div style="background:rgba(255,255,255,.6);border-radius:10px;padding:20px;margin-bottom:16px;">
+        <h4 style="color:var(--dore);font-weight:700;margin-bottom:8px;">🟡 Étape 1 : Initiation aux lettres et sons du Coran</h4>
+        <p style="font-size:.9rem;color:var(--txm);line-height:1.7;">CP - CE1 · 6 à 8 ans · Découverte des lettres arabes, sons du Coran et bases en lecture coranique.</p>
+      </div>
+      
+      <div style="background:rgba(255,255,255,.6);border-radius:10px;padding:20px;margin-bottom:16px;">
+        <h4 style="color:var(--dore);font-weight:700;margin-bottom:8px;">🟡 Étape 2 : Lecture fluide et Tajwid</h4>
+        <p style="font-size:.9rem;color:var(--txm);line-height:1.7;">CE2 - CM1 - CM2 - 6e - 5e · 9 à 11 ans · Maîtrise de la lecture fluide du Coran et apprentissage des règles du Tajwid (récitation correcte).</p>
+      </div>
+      
+      <div style="background:rgba(255,255,255,.6);border-radius:10px;padding:20px;margin-bottom:16px;">
+        <h4 style="color:var(--dore);font-weight:700;margin-bottom:8px;">🟡 Étape 3 : Préparation à la Mémorisation (Prépa-Hifz)</h4>
+        <p style="font-size:.9rem;color:var(--txm);line-height:1.7;">CM1 - CM2 - 6e - 5e · 9 à 11 ans · Consolidation de la lecture fluide, maîtrise avancée du Tajwid et préparation méthodologique à la mémorisation complète.</p>
+      </div>
+      
+      <div style="background:rgba(255,255,255,.6);border-radius:10px;padding:20px;">
+        <h4 style="color:var(--dore);font-weight:700;margin-bottom:8px;">🟡 Étape 4 : Mémorisation intégrale du Coran (Hifz)</h4>
+        <p style="font-size:.9rem;color:var(--txm);line-height:1.7;">4e - 3e - Lycée · 12 à 18 ans · Mémorisation complète du Saint Coran, perfectionnement du Tajwid et consolidation des connaissances religieuses.</p>
+      </div>
+    </div>
+    
     <div style="background:linear-gradient(135deg,rgba(198,163,90,.08),rgba(198,163,90,.04));border-left:4px solid var(--dore);border-radius:10px;padding:28px;margin-bottom:24px;">
       <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--noir);margin-bottom:8px;letter-spacing:-.01em;"><strong>Étape d'initiation</strong></h3>
       <p style="font-size:.9rem;color:var(--dore);font-weight:600;margin-bottom:12px;">CP - CE1 · 6 à 8 ans · 2 ans</p>
       <p style="font-size:.95rem;color:var(--txm);line-height:1.8;">Découverte des lettres et sons du Coran, bases en lecture coranique et notions fondamentales.</p>
     </div>
     
-    <!-- CLASSE PRÉPARATOIRE -->
     <div style="background:linear-gradient(135deg,rgba(198,163,90,.08),rgba(198,163,90,.04));border-left:4px solid var(--dore);border-radius:10px;padding:28px;margin-bottom:24px;">
       <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--noir);margin-bottom:8px;letter-spacing:-.01em;"><strong>Classe préparatoire</strong></h3>
       <p style="font-size:.9rem;color:var(--dore);font-weight:600;margin-bottom:12px;">CE2 - CM1 - CM2 - 6e - 5e · 9 à 11 ans · 5 ans</p>
       <p style="font-size:.95rem;color:var(--txm);line-height:1.8;">Lecture fluide du Coran, maîtrise du Tajwid, Aqidah, Fiqh (Al-Mabadi' al-Fiqhiyah) et Hadiths (40 Hadiths de Nawawi).</p>
     </div>
     
-    <!-- CLASSE PRÉPA-HIFZ -->
     <div style="background:linear-gradient(135deg,rgba(198,163,90,.12),rgba(198,163,90,.08));border-left:4px solid var(--dore);border-radius:10px;padding:28px;margin-bottom:24px;border-top:2px solid var(--dore);">
       <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--noir);margin-bottom:8px;letter-spacing:-.01em;"><strong>Classe Prépa-Hifz</strong> — <span style="color:var(--dore);font-size:.85rem;">L'Excellence vers la Mémorisation</span></h3>
       <p style="font-size:.9rem;color:var(--dore);font-weight:600;margin-bottom:12px;">CM1 - CM2 - 6e - 5e · 9 à 11 ans · 3 ans</p>
@@ -191,7 +240,6 @@ footer{background:linear-gradient(135deg,var(--noir2),#0a0a0a);padding:32px 24px
       </ul>
     </div>
     
-    <!-- MÉMORISATION COMPLÈTE -->
     <div style="background:linear-gradient(135deg,rgba(198,163,90,.08),rgba(198,163,90,.04));border-left:4px solid var(--dore);border-radius:10px;padding:28px;margin-bottom:24px;">
       <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--noir);margin-bottom:8px;letter-spacing:-.01em;"><strong>Mémorisation complète</strong></h3>
       <p style="font-size:.9rem;color:var(--dore);font-weight:600;margin-bottom:12px;">4e - 3e - Lycée · 12 à 18 ans · 7 ans</p>
@@ -244,7 +292,7 @@ footer{background:linear-gradient(135deg,var(--noir2),#0a0a0a);padding:32px 24px
     <div style="margin-top:32px;padding:28px;background:linear-gradient(135deg,rgba(198,163,90,.08),rgba(198,163,90,.04));border-left:4px solid var(--dore);border-radius:10px;font-size:.95rem;color:var(--txm);">
       <div style="margin-bottom:14px;"><strong style="color:var(--dore);font-size:1rem;">💳 IBAN :</strong> <span style="font-family:monospace;color:var(--noir);font-weight:500;">FR76 1871 9000 9100 9135 2810 036</span></div>
       <div style="margin-bottom:14px;"><strong style="color:var(--dore);font-size:1rem;">🏦 BIC :</strong> <span style="font-family:monospace;color:var(--noir);font-weight:500;">BFCOYTYTXXX</span></div>
-      <div><strong style="color:var(--dore);font-size:1rem;">👤 Bénéficiaire :</strong> <span style="color:var(--noir);font-weight:500;">Institut Baytoul Ilm</span></div>
+      <div><strong style="color:var(--dore);font-size:1rem;">👤 Bénéficiaire :</strong> <span style="color:var(--noir);font-weight:500;">ABCC</span></div>
     </div>
   </div>
 </div>
@@ -264,7 +312,6 @@ footer{background:linear-gradient(135deg,var(--noir2),#0a0a0a);padding:32px 24px
         </div>
       </div>
       <div class="form-block-body" style="padding:0;border:none;">
-        <!-- ⚠️ REPÈRE JOTFORM: Remplacez le code ci-dessous par votre iframe Jotform -->
         <iframe
           id="JotFormIFrame-261345327062048"
           title="Envoyer un message"
@@ -292,6 +339,7 @@ footer{background:linear-gradient(135deg,var(--noir2),#0a0a0a);padding:32px 24px
         <div style="display:flex;flex-direction:column;gap:4px;">
           <div style="font-size:.9rem;font-weight:600;color:var(--dore);">Baytoul Ilm</div>
           <div style="font-size:.9rem;color:var(--dore);font-weight:300;letter-spacing:.05em;">بيت العلم</div>
+          <div style="font-size:.85rem;color:rgba(245,245,245,.6);margin-top:8px;"><a href="mailto:baytoulilm13@gmail.com" style="color:var(--dore);text-decoration:none;font-weight:500;">baytoulilm13@gmail.com</a></div>
         </div>
         <div style="font-size:.9rem;color:var(--txm);">84 Av. de Rassi, 97670 Chiconi</div>
       </div>
@@ -317,12 +365,13 @@ footer{background:linear-gradient(135deg,var(--noir2),#0a0a0a);padding:32px 24px
     <div class="mhdr"><h3>Politique de confidentialité</h3><button class="mcls" onclick="closeModal('privacy')">✕</button></div>
     <div class="mbody">
       <p class="intro">Baytoul Ilm — Institut de Savoir de Chiconi, Mayotte. Mise à jour : septembre 2025.</p>
-      <h4>1. Responsable</h4><p>Institut Baytoul Ilm, 84 Avenue de Rassi, 97670 Chiconi, Mayotte.</p>
+      <h4>1. Responsable</h4><p>Institut Baytoul Ilm, 84 Avenue de Rassi, 97670 Chiconi, Mayotte. Email : <strong>baytoulilm13@gmail.com</strong></p>
       <h4>2. Données collectées</h4><p>Nom, prénom, date de naissance, adresse, téléphone, e-mail, niveau scolaire, paiement — via formulaire.</p>
       <h4>3. Finalité</h4><ul><li>Gestion des inscriptions et suivi pédagogique</li><li>Communication avec les familles</li><li>Gestion administrative et comptable</li></ul>
       <h4>4. Base légale</h4><p>Exécution d'un contrat et consentement des parents.</p>
       <h4>5. Conservation</h4><p>Durée de la scolarité + 3 ans.</p>
-      <h4>6. Vos droits</h4><p>Accès, rectification, suppression.</p>
+      <h4>6. Partage des données</h4><p>Vos données ne sont ni partagées, ni divulguées à des tiers. Elles sont conservées de manière confidentielle et utilisées uniquement par l'Institut Baytoul Ilm pour ses fins administratives et pédagogiques.</p>
+      <h4>7. Vos droits</h4><p>Accès, rectification, suppression.</p>
     </div>
   </div>
 </div>
@@ -336,7 +385,8 @@ footer{background:linear-gradient(135deg,var(--noir2),#0a0a0a);padding:32px 24px
       <h4>2. Formulaire d'inscription</h4><ul><li>Réservé exclusivement à l'inscription aux cours de l'Institut Baytoul Ilm</li><li>Les informations doivent être exactes et à jour</li><li>L'inscription engage contractuellement les parents ou tuteurs légaux</li></ul>
       <h4>3. Données personnelles</h4><p>Les données collectées sont utilisées uniquement à des fins de gestion pédagogique et administrative.</p>
       <h4>4. Droit applicable</h4><p>Droit français. Tribunaux de Mamoudzou, Mayotte.</p>
-      <h4>5. Contact</h4><p>Veuillez remplir le formulaire de contact sur notre site.</p>
+      <h4>5. Partage et confidentialité des données</h4><p>Les données collectées ne sont ni partagées ni divulguées à des tiers externes. Elles demeurent confidentielles et sont utilisées uniquement par l'Institut pour la gestion administrative et pédagogique.</p>
+      <h4>6. Contact</h4><p>Pour toute question, veuillez remplir le formulaire de contact sur notre site ou envoyer un email à : <strong>baytoulilm13@gmail.com</strong></p>
     </div>
   </div>
 </div>
