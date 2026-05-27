@@ -96,11 +96,11 @@ footer{background:linear-gradient(135deg,var(--noir2),#0a0a0a);padding:32px 24px
   to{opacity:1;transform:translateY(0)}
 }
 @media(max-width:600px){
-  .hdr-top{display:flex;align-items:center;justify-content:space-between;padding:10px 8px;border-bottom:none;gap:8px}
-  .logo-block{flex-shrink:0;margin-left:8px !important}
-  .logo-icon{width:40px;height:auto}
+  .hdr-top{display:flex;align-items:center;justify-content:flex-start;padding:8px 4px;border-bottom:none;gap:6px}
+  .logo-block{flex-shrink:0;margin-left:4px !important}
+  .logo-icon{width:40px !important;height:auto}
   nav{display:none !important}
-  #menu-hamburger{display:block !important;flex-shrink:0;font-size:1.8rem;padding:8px 12px !important;margin-right:8px !important;color:var(--dore);cursor:pointer;transition:all .2s;background:none;border:none}
+  #menu-hamburger{display:block !important;flex-shrink:0;font-size:1.4rem;padding:6px 8px !important;margin-left:auto !important;margin-right:4px !important;color:var(--dore);cursor:pointer;transition:all .2s;background:none;border:none;line-height:1}
   #menu-hamburger:active{transform:scale(0.95)}
   .h-title{font-size:clamp(1.8rem,5vw,3rem)}
   .h-ar{font-size:clamp(1.2rem,4vw,2.5rem)}
@@ -130,14 +130,14 @@ footer{background:linear-gradient(135deg,var(--noir2),#0a0a0a);padding:32px 24px
 
 <header>
   <div class="hdr-top">
-    <div class="logo-block" style="margin-left:8px;">
-      <div class="logo-icon" style="width:200px;">
+    <div class="logo-block" style="margin-left:4px;flex-shrink:0;">
+      <div class="logo-icon" style="width:40px;">
         <img src="https://i.postimg.cc/Kvp2nqP3/Capture-d-ecran-2026-05-08-150124.png" alt="Baytoul Ilm" style="width:100%;height:auto;">
       </div>
     </div>
-    <div style="flex:1;display:flex;align-items:center;justify-content:center;">
-      <div class="logo-ar" style="width:150px;height:150px;display:flex;align-items:center;justify-content:center;font-size:0;position:relative;">
-        <svg viewBox="0 0 200 200" width="150" height="150" xmlns="http://www.w3.org/2000/svg">
+    <div style="flex:1;display:flex;align-items:center;justify-content:flex-start;margin-left:8px;">
+      <div class="logo-ar" style="width:50px;height:50px;display:flex;align-items:center;justify-content:center;font-size:0;flex-shrink:0;">
+        <svg viewBox="0 0 200 200" width="50" height="50" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <style>
               .islamic-symbol { fill: none; stroke: #00C8FF; stroke-width: 3; stroke-linecap: round; }
@@ -149,7 +149,7 @@ footer{background:linear-gradient(135deg,var(--noir2),#0a0a0a);padding:32px 24px
         </svg>
       </div>
     </div>
-    <button id="menu-hamburger" onclick="toggleMobileMenu()" style="display:none;background:none;border:none;font-size:1.8rem;color:var(--dore);cursor:pointer;padding:8px 12px;margin-right:8px;line-height:1;transition:transform .2s;">☰</button>
+    <button id="menu-hamburger" onclick="toggleMobileMenu()" style="display:none;background:none;border:none;font-size:1.4rem;color:var(--dore);cursor:pointer;padding:6px 8px;margin-left:auto;margin-right:4px;line-height:1;transition:transform .2s;flex-shrink:0;">☰</button>
     <nav style="grid-column:3;margin:0;padding:0;background:none;gap:32px;display:flex">
       <a onclick="goPage('home')" class="active" id="tab-home">Accueil</a>
       <a onclick="goPage('programme')" id="tab-programme">Programme</a>
