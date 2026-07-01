@@ -692,6 +692,29 @@ iframe.form-iframe{
   gap:14px;
   flex-wrap:wrap;
 }
+.payment-notice{
+  border:1px solid rgba(42,138,154,.22);
+  border-left:4px solid var(--teal2);
+  border-radius:4px;
+  padding:18px 20px;
+  background:#f8fbfc;
+}
+.payment-notice-top{margin-top:28px}
+.payment-notice h4{
+  font-family:'Cinzel',serif;
+  font-size:.75rem;
+  font-weight:600;
+  color:var(--noir2);
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  margin:0 0 10px;
+}
+.payment-notice p{
+  margin:4px 0;
+  color:var(--txm);
+  font-size:.9rem;
+  line-height:1.65;
+}
 .download-link{display:none;text-decoration:none}
 .download-link.show{display:inline-flex}
 .form-status{
